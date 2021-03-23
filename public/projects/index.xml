@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on BUZO</title>
+    <link>https://thatgurjot.com/projects/</link>
+    <description>Recent content in Projects on BUZO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Mar 2021 14:27:39 +0530</lastBuildDate><atom:link href="https://thatgurjot.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Tania Mod Theme</title>
+      <link>https://thatgurjot.com/projects/hugo-tania-mod-theme/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://thatgurjot.com/projects/hugo-tania-mod-theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tania Rascia</title>
+      <link>https://thatgurjot.com/projects/tania-rascia/</link>
+      <pubDate>Tue, 23 Mar 2021 14:27:39 +0530</pubDate>
+      
+      <guid>https://thatgurjot.com/projects/tania-rascia/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
