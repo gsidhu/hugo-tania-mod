@@ -1,19 +1,34 @@
-baseurl: "https://example.com"
-languageCode: "en-us"
-title: "Hugo Tania"
-theme: "hugo-tania"
+baseurl: "https://thatgurjot.com"
+languageCode: "en"
+defaultContentLanguage: "en"
+title: "BUZO"
+preserveTaxonomyNames: true
+enableRobotsTXT: true
+enableEmoji: true
+theme: "hugo-tania-mod"
 
 params:
-  titleEmoji: '😎'
+  author: "Gurjot."
+  description: "A light-weight theme for a personal website."
+  keywords: ["light-weight", "blog", "dark"]
+  titleEmoji: '🦄'
+  since: 2020
   socialOptions:
-    github: 
-    twitter: 
+    github: https://github.com/gsidhu
+    twitter: https://twitter.com/thatgurjot
+  uglyURLs: false
+  scripts:
+    analytics: "<script data-goatcounter='https://thatgurjot.goatcounter.com/count' async src='/js/count.js'></script>"
 
 menu:
   header:
-    - name: Articles
-      url: "/articles/"
-  footer:
+    - name: archives
+      url: "/archive"
+      weight: 10  # set order of nav items
+    - name: about
+      url: "/about"
+      weight: 20
+  footer: # disabled by default in layouts > partials > footer.html
     - name: RSS
       url: "/index.xml"
 

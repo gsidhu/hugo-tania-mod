@@ -8,10 +8,10 @@
                     <h1>{{ .Title }}</h1>
                     <div class="post-meta">
                         <div>
-                            By {{ .Params.author }} on <time>{{ .Date.Format "January 02, 2006" }}</time>
+                            By {{ .Site.Params.author }} on <time>{{ .Date.Format "January 02, 2006" }}</time>
                         </div>
                         <div class="tags">
-                            {{ range (.GetTerms "tags") }}
+                            {{ range (.GetTerms "categories") }}
                             <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
                             {{ end }}
                         </div>
@@ -23,6 +23,12 @@
 
     <div class="article-post">
     {{ .Content }}
+    </div>
+
+    <div class="tags">
+        {{ range (.GetTerms "tags") }}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
     </div>
 </div>
 

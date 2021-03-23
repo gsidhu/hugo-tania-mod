@@ -1,9 +1,12 @@
+{{- define "title" }}{{ T "archive" }} - {{ .Site.Title }}{{ end -}}
+
 {{ define "main" }}
 
 <header>
     <div class="container">
         <h1>{{ .Title }}</h1>
-        <p class="subtitle">{{ .Params.subtitle }}</p>
+        <!-- <p class="subtitle">{{ .Params.subtitle }}</p> -->
+        <p class='terms'><a class='section-button' href="/categories/">categories</a> | <a class='section-button' href="/tags/">tags</a></p>
     </div>
 </header>
 
@@ -17,14 +20,15 @@
                 <h2>{{ .Key }}</h2>
                 <div class="posts">
                     {{ range .Pages }}
-                    <div class="post">
-                        <a href="{{ .RelPermalink }}">
+                    <div class="post flex-post">
+                        <a href="{{ .RelPermalink }}" class="home-post-title">
                             <div class="post-row">
                                 <time>{{ .Date.Format "Jan 02" }}</time>
                                 <h3>{{ .Title }}</h3>
                             </div>
-                            <!--<div class="new-post">New!</div>-->
                         </a>
+                        {{ $category := index .Params.categories 0 }}
+                        <a class="home-post-category section-button" href={{ path.Join "/categories" $category }}>{{ $category }}</a>
                     </div>
                     {{ end }}
                 </div>

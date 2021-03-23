@@ -108,7 +108,7 @@ switchDarkMode = function () {
 
     const modeIcons = {
         'dark': '☀️',
-        'light': '🌙'
+        'light': '🌚'
     }
 
     const setModeButtonIcon = (mode) => {

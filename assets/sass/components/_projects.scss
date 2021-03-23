@@ -1,13 +1,12 @@
 /* Projects */
-
 .projects .project:last-of-type {
     border-bottom-width: 0;
 }
 
 .project {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
     padding: 0.75rem 0;
     border-bottom: 2px solid var(--light-background);
 
@@ -17,14 +16,12 @@
     }
 
     a {
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 0.25fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
         margin-bottom: 0.25rem;
         border-width: 0;
-
-        &:hover h3 {
-            text-decoration: underline;
-        }
 
         &.button {
             margin-left: 1.5rem;
@@ -35,15 +32,25 @@
     h3 {
         font-size: 1.2rem;
         margin: 0;
+
+        &:hover {
+            color: var(--brand-color);
+        }
     }
 
     .description {
         font-size: 1.1rem;
-        color: var(--light-font-color);
+        color: var(--medium-font-color);
     }
 }
 
 @media screen and (min-width: 800px) {
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: .75rem 0;
+    }
+
     .project {
         border-bottom-width: 0;
 

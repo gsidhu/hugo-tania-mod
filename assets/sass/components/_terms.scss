@@ -1,15 +1,17 @@
 .terms {
     a {
-        padding: .75rem 1.25rem;
+        padding: .75rem .75rem;
         margin: 0 .25rem;
         font-size: 1.2rem;
         font-weight: 400;
         color: var(--font-color);
         border-radius: .35rem;
+        display: inline-block;
+        position: relative;
 
-        &:hover {
-            background: var(--light-background);
-            color: var(--dark-font-color);
-        }
+        // &:hover {
+        //     background: var(--light-background);
+        //     color: var(--dark-font-color);
+        // }
     }
 }

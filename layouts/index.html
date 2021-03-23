@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ $projects := where .Site.RegularPages "Section" "projects" }}
+{{ $pages = first (default 5 .Site.Params.homePosts) (sort (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) ".Params.hiddenfromhomepage" "!=" true) "Date" "desc") }}
+
+<div class="container">
+    <section>
+        <h2 class='section-title'>
+            Blog
+            <a class="section-button" href="/archive">View all</a>
+        </h2>
+        <div class="posts">
+            {{ range $pages }}
+            <div class="post flex-post">
+                <a href="{{ .RelPermalink }}" class="home-post-title">
+                    <div class="post-row">
+                        <time>{{ .Date.Format "Jan 02" }}</time>
+                        <h3>{{ .Title }}</h3>
+                    </div>
+                </a>
+                {{ $category := index .Params.categories 0 }}
+                <a class="home-post-category section-button" href={{ path.Join "/categories" $category }}>{{ $category }}</a>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    {{ if gt (len $projects) 0}}
+    <section>
+        <h2>Projects</h2>
+        <div class="projects">
+            {{ range $projects.ByWeight }}
+            <div class="project">
+                <div class='project-row'>
+                    <a href="{{ .Params.link }}" target="_blank" rel="noopener">
+                        <time>{{ .Params.year }}</time>
+                        <h3>{{ .Title }}</h3>
+                        <div class="description">{{ .Params.description }}</div>
+                    </a>
+                </div>
+                {{ if .Params.showrepo }}
+                <div class="flex">
+                    <a href="{{ .Params.repo }}" class="button" target="_blank" rel="noreferrer">Source</a>
+                </div>
+                {{end}}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+</div>
+
+{{ end }}

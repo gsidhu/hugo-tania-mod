@@ -1,9 +1,13 @@
-{{ partial "header.html" . }}
+{{- define "title" }}404 page not found - {{ .Site.Title }}{{ end -}}
+
+{{ define "main" }}
 
 <div class="container">
 <main>
-<h1>404 NOT FOUND</h1>
+<h1>404</h1>
+<h2>You're lost.</h2>
+<a class="button" href="{{ "/" | relLangURL }}">Go Home</a>
 </main>
 </div>
 
-{{ partial "footer.html" . }}
+{{end}}

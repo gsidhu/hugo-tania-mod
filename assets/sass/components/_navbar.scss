@@ -48,8 +48,10 @@ main {
         }
 
         &.brand {
+            font-size: 22px;
+            font-family: Athelas,STHeiti,Microsoft Yahei,serif;
             font-weight: 500;
-            color: white;
+            color: var(--brand-color);
             white-space: nowrap;
             border: none;
             display: flex;
@@ -109,15 +111,15 @@ main {
 
             &:hover, &[aria-current='page'] {
                 background: var(--light-background);
-                color: var(--dark-font-color);
+                color: var(--brand-color);
             }
 
             &.brand {
-                font-size: 1.3rem;
+                font-family: Athelas,STHeiti,Microsoft Yahei,serif;
                 margin-right: 3rem;
                 border: none;
                 background: transparent !important;
-                color: var(--dark-font-color);
+                color: var(--brand-color);
 
                 &:hover {
                     background: var(--light-background) !important;
@@ -127,6 +129,10 @@ main {
                     height: 26px;
                     width: 26px;
                     margin-right: 0.25rem;
+                }
+
+                .emoji {
+                    font-size: 48px;
                 }
             }
         }

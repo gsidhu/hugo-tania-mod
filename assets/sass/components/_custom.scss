@@ -1,0 +1,46 @@
+// remove extra margin-bottom on p inside blockquote
+blockquote > p {
+    margin: 0px;
+}
+
+.section-title {
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.home-post-title {
+    flex: 0 0 70%;
+}
+
+@media screen and (max-width: 800px) {
+    .home-post-category {
+        display: none !important;
+    }
+    .home-post-title {
+        flex: 0 0 100%;
+    }
+}
+
+.flex-post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 800px) {
+    .project-row {
+        a {
+            border-radius: .3rem;
+            padding: .75rem 1rem;
+            border-bottom-color: transparent;
+        }
+
+        a:hover {
+            background: var(--light-background);
+        }
+    }
+}
+
+.description {
+    grid-column-start: span 2;
+}

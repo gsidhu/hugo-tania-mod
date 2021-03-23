@@ -1,12 +1,36 @@
 <footer class="footer flex">
     <section class="container">
         <nav class="footer-links">
-            {{ range .Site.Menus.footer }}
+            <!-- Enable this to show the Footer Menu set in config.yaml -->
+            <!-- {{ range .Site.Menus.footer }}
             <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-            {{ end }}
+            {{ end }} -->
+            <div class="bio-social">
+                {{ range $name, $path := $.Param "socialOptions" }}
+                {{ if (and $path (ne $name "email")) }}
+                <a href="{{ $path | safeURL }}" target="_blank" rel="noreferrer" title="{{ $name }}"
+                    aria-label="{{ $name }}">
+                    {{ partial (print "svgs/social/" $name ".svg") (dict "width" 25 "height" 25) }}
+                </a>
+                {{ end }}
+                {{ end }}
+            </div>
         </nav>
+        <div class="copyright">
+            <span class="copyright-year">
+              {{- $current := now.Format "2006" }}
+              <!-- &copy;  -->
+              {{ partial (print "svgs/cc.svg") (dict "width" 20 "height" 20 "color" "#8a8a8a") }}
+              {{ if ne .Site.Params.since $current -}}
+                {{ .Site.Params.since }} - 
+              {{ end }}
+              {{- $current }}
+              <span class="author">{{ .Site.Params.author | safeHTML }}</span>
+            </span>
+          </div>
     </section>
-    {{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) (or .IsPage .IsHome) }}
+    
+    {{ if .Params.mathjax }}
     <script type="text/javascript">
         window.MathJax = {
             tex: {
@@ -16,6 +40,12 @@
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
     {{- end }}
+
+    <!-- Local javascript -->
     {{ $features := resources.Get "js/features.js" | minify | fingerprint }}
     <script async src="{{ $features.RelPermalink }}"></script>
+
+    <!-- Analytics -->
+    {{ $goatcounter := resources.Get "js/count.js" }}
+    <script data-goatcounter="https://thatgurjot-theme.goatcounter.com/count" async src="{{ $goatcounter.RelPermalink }}"></script>
 </footer>

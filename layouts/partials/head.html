@@ -4,9 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="dark">
+    
+    <!-- author, description & keywords  -->
+    <meta name="author" content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Params.author | safeHTML }}{{ end }}" />
+
+    {{- if .Site.Params.description -}}
+    <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+    {{- end -}}
+
+    {{- if .Keywords -}}
+    {{ $length := len .Keywords | add -1 -}}
+    <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
+    {{- else if .Site.Params.keywords -}}
+    {{ $length := len .Site.Params.keywords | add -1 -}}
+    <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
+    {{- end }}
+
+    <!-- Site Generator -->
+    <meta name="generator" content="Hugo {{ .Site.Hugo.Version }} with theme hugo-tania-mod" />
+
+    <!-- Page title -->
     <title>{{ with .Title }} {{ . }} | {{ end }}{{ .Site.Title }}</title>
-    <!-- uncomment this to add favicon -->
-    <!-- <link rel="icon" type="image/png" href="{{ "/icons/favicon.png" | relURL }}" /> -->
+
+    <!-- Favicon and Touch icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+    <link rel="manifest" href="{{ "manifest.json" | relURL }}">
+    <link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | relURL }}" color="#5bbad5">
+
+    <!-- CSS -->
     {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
 </head>
