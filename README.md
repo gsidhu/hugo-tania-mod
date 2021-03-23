@@ -1,84 +1,53 @@
-# Hugo Theme Tania
+# Tania Mod - Hugo Theme
 
-A simple theme for bloggers.
+A light-weight theme for a personal website.
 
 ## Demo
-
-[Example Site](https://hugo-tania.netlify.app/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bae5db51-7cc6-41e2-9615-029ade8aa264/deploy-status)](https://app.netlify.com/sites/hugo-tania/deploys)
+[Example Site](https://theme.thatgurjot.com)
 
 ## Introduction
-Most of the styles for this theme come from [taniarascia.com](https://github.com/taniarascia/taniarascia.com)
+This theme is inspired by [taniarascia.com](https://github.com/taniarascia/taniarascia.com) and is forked from [hugo-tania](https://github.com/WingLim/hugo-tania).
 
-I like it's style, so I transplant it to Hugo.
+While the core is the same, I have modified the theme a bit to my liking.
 
-And is that why this theme called Tania.
+**Features:**
+- Dark mode switch
+- Floating footnotes
+- Light-weight
 
-Thank Tania Rascia again.
+{{< img class="center" data-src="/img/lighthouse-perfection.png" title="Perfection" alt="Perfection." style="width: 25%">}}
+The theme has a 100% score on Lighthouse.
 
-Here is some features:
+## Installation
 
-- Dark mode(It can switch automatically or manually)
-- Footnotes(Float on the right side)
+1. [Download](https://github.com/gsidhu/hugo-tania-mod/archive/refs/heads/main.zip) this repo.
+2. Unzip the folder and copy it to the `themes` folder in your Hugo site's root folder.
+3. Change your `config` file according to [exampleSite > config.yaml](https://github.com/gsidhu/hugo-tania-mod/blob/main/exampleSite/config.yaml).
 
-## Usage
+Enjoy.
 
-### Installation
+## Details
+The theme features three layouts (`archetypes`) -
+1. [Posts:](https://github.com/gsidhu/hugo-tania-mod/blob/main/archetypes/posts.md) For your blog posts that will show up on the homepage and in the archive. These files are stored in the `posts` folder inside `content`.
+2. [Projects:](https://github.com/gsidhu/hugo-tania-mod/blob/main/archetypes/projects.md) For linking projects on the homepage. These files are stored in the `projects` folder inside `content`.
+3. [Pages:](https://github.com/gsidhu/hugo-tania-mod/blob/main/archetypes/default.md) Independent pages that don't show anywhere unless explicitly linked to. Useful for about pages and such. These files need to be stored in the root of the `content` folder.
 
-In your site's root dir
-
+You can create new files using these commands -
 ```bash
-git submodule add https://github.com/WingLim/hugo-tania themes/hugo-tania
+hugo new posts/my-new-post.md # for post
+hugo new projects/my-new-project.md # for project
+hugo new my-new-page.md # for page
 ```
 
-Edit your site config following `exampleSite/config.yaml`.
+## To do
+1. Add pagination to Archive.
+2. ???
 
-### Params
 
-`titleEmoji` will show before the blog title on site navbar.
-
-```yaml
-titleEmoji: '😎'
-```
-
-`socialOptions` will show on index bio with `_index.md` content.
-Account with icon can set as below:
-```yaml
-socialOptions:
-    dev-to:
-    facebook:
-    github:
-    instagram:
-    linkedin:
-    medium:
-    stack-overflow:
-    telegram:
-    twitter:
-    twitch:
-    whatsapp:
-```
-
-### Layout
-
-`articles` layout is for showing all articles you write.
-
-Add `articles.md` to site `content` dir, and write as below:
-
-```markdown
----
-title: Articles
-subtitle: Posts, tutorials, snippets, musings, and everything else.
-date: 2020-11-26
-type: section
-layout: "archives"
----
-```
-
-## Thanks to
-- [你好黑暗，我的老朋友 —— 为网站添加用户友好的深色模式支持](https://blog.skk.moe/post/hello-darkmode-my-old-friend/)
-- [Footnotes, citations, and sidenotes](https://prose.yihui.org/about/#footnotes-citations-and-sidenotes)
+## Gratitude
+- [Tania Rascia](https://github.com/taniarascia/taniarascia.com) for the base theme.
+- [WingLim](https://github.com/WingLim/hugo-tania) for porting the theme.
+- [Hugo](https://gohugo.io/) for the remarkable static site generator.
 
 ## License
-
 [MIT](https://github.com/WingLim/hugo-tania/blob/main/LICENSE)

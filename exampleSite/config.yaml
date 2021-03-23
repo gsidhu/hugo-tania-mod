@@ -1,4 +1,4 @@
-baseurl: "https://thatgurjot.com"
+baseurl: "https://theme.thatgurjot.com"
 languageCode: "en"
 defaultContentLanguage: "en"
 title: "BUZO"
@@ -18,7 +18,7 @@ params:
     twitter: https://twitter.com/thatgurjot
   uglyURLs: false
   scripts:
-    analytics: "<script data-goatcounter='https://thatgurjot.goatcounter.com/count' async src='/js/count.js'></script>"
+    analytics: "<script data-goatcounter='https://theme-thatgurjot.goatcounter.com/count' async src='/js/count.js'></script>"
 
 menu:
   header:

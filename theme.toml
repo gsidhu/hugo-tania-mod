@@ -3,7 +3,7 @@
 
 name = "Tania Mod"
 license = "MIT"
-licenselink = "https://github.com/gsidhu/hugo-tania-mod/blob/master/LICENSE"
+licenselink = "https://github.com/gsidhu/hugo-tania-mod/blob/main/LICENSE"
 description = "A light-weight theme for a personal website."
 homepage = "https://github.com/gsidhu/hugo-tania-mod"
 tags = [
