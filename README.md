@@ -5,7 +5,7 @@ A light-weight theme for a personal website.
 ## Demo
 ### [Live Demo](https://theme.thatgurjot.com)
 
-![Hugo Tania Mod Demo](./static/img/hugo-tania-mod.gif)
+![Hugo Tania Mod Demo](https://github.com/gsidhu/hugo-tania-mod/blob/main/static/img/hugo-tania-mod.gif)
 
 ## Introduction
 This theme is inspired by [taniarascia.com](https://github.com/taniarascia/taniarascia.com) and is forked from [hugo-tania](https://github.com/WingLim/hugo-tania).
@@ -17,7 +17,7 @@ While the core is the same, I have modified the theme a bit to my liking.
 - Floating footnotes
 - Light-weight
 
-![Lighthouse Perfection](./static/img/lighthouse-perfection.png)
+![Lighthouse Perfection](https://github.com/gsidhu/hugo-tania-mod/blob/main/static/img/lighthouse-perfection.png)
 
 The theme has a 100% score on Lighthouse.
 
